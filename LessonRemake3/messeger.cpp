@@ -26,10 +26,10 @@ void Messeger::anthenticate(const QString &login, const QString &password)
 
     connect(reply, &QNetworkReply::finished,
                 [this, reply](){
-                QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
-                emit authRequestCompleted(reply->errorString(),
-                                          obj.value("token").toString());
-                reply->deleteLater();
+        QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+        emit authRequestCompleted(reply->errorString(),
+                                  obj.value("token").toString());
+        reply->deleteLater();
 
     });
 }
