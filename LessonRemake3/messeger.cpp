@@ -30,11 +30,8 @@ void Messeger::anthenticate(const QString &login, const QString &password)
         emit authRequestCompleted(reply->errorString(),
                                   obj.value("token").toString());
         reply->deleteLater();
-
     });
 }
-
-
 
 void Messeger::registrate(const QString &login, const QString &password)
 {
@@ -48,13 +45,9 @@ void Messeger::registrate(const QString &login, const QString &password)
   QByteArray bodyData = QJsonDocument(body).toJson();
 
   QNetworkReply *reply= _net.post(request, bodyData);
-
+  
   connect(reply, &QNetworkReply::finished,[this,reply](){
       emit regRequestCompleted(reply -> errorString());
       reply->deleteLater();
-
   });
-
-
-
 }
