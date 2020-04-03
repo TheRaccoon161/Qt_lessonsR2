@@ -30,6 +30,7 @@ Item {
         anchors.horizontalCenter:login_form.horizontalCenter
         anchors.topMargin: 10
         anchors.top:text_login.bottom
+        echoMode: TextInput.Password
     }
     Text {
         id: title_inf1
