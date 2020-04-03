@@ -30,6 +30,7 @@ Item {
         anchors.horizontalCenter:reg_form.horizontalCenter
         anchors.topMargin: 10
         anchors.top:text_logup.bottom
+        echoMode: TextInput.Password
     }
     TextField{
         id:text_passup2
@@ -37,6 +38,7 @@ Item {
         anchors.horizontalCenter:reg_form.horizontalCenter
         anchors.topMargin: 10
         anchors.top:text_passup1.bottom
+        echoMode: TextInput.Password
     }
     TextField{
         id:text_nickname
