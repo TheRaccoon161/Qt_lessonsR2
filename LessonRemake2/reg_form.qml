@@ -8,14 +8,14 @@ Item {
     anchors.horizontalCenter: parent.horizontalCenter
 
     Text {
-               id: title_text
-               text: qsTr("Sign up")
-               color: "purple"
-               font.pixelSize: 20
-               anchors.top:reg_form.top
-               anchors.topMargin: 10
-               anchors.horizontalCenter: reg_form.horizontalCenter
-           }
+        id: title_text
+        text: qsTr("Sign up")
+        color: "purple"
+        font.pixelSize: 20
+        anchors.top:reg_form.top
+        anchors.topMargin: 10
+        anchors.horizontalCenter: reg_form.horizontalCenter
+    }
 
     TextField{
         id:text_logup
