@@ -45,7 +45,7 @@ Item {
         anchors.topMargin: 10
         anchors.horizontalCenter: login_form.horizontalCenter
         text: qsTr("sign in")
-        visible: text_login.text.length>=5 & text_passin.text.length>=5
+        visible: text_login.text.length>=5 && text_passin.text.length>=5
         onClicked: {
             title_inf1.visible=true
             title_inf1.text="Please wait..."

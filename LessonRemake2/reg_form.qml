@@ -59,7 +59,7 @@ Item {
         anchors.topMargin: 10
         anchors.horizontalCenter: reg_form.horizontalCenter
         text: qsTr("sign up")
-        visible: text_logup.text.length>=5 & text_passup1.text.length>=5 & text_passup2.text.length>=5 & text_nickname.text.length>=5
+        visible: text_logup.text.length>=5 && text_passup1.text.length>=5 && text_passup2.text.length>=5 && text_nickname.text.length>=5
         onClicked: {
             if(text_passup1.text!=text_passup2.text)
                 title_inf2.text="Error. Password doesn't much"

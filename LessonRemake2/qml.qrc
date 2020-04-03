@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>login_form.qml</file>
         <file>reg_form.qml</file>
+        <file>ClickText.qml</file>
     </qresource>
 </RCC>
