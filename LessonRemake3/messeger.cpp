@@ -10,24 +10,6 @@
 Messeger::Messeger(QObject *parent) : QObject(parent)
 {
 
-
-}
-
-void Messeger::Auth_Finished()
-{
-    qDebug() << "Auth error: " << this->authError;
-    qDebug() << "Token: " << this->getToken();
-    emit regRequestCompleted(this->authError);
-
-}
-QString Messeger::getToken() {
-    return this->token;
-}
-
-void Messeger::Reg_Finished()
-{
-    qDebug() << "Register error: " << this->registerError;
-    emit regRequestCompleted(this->registerError);
 }
 
 void Messeger::anthenticate(const QString &login, const QString &password)
@@ -45,14 +27,9 @@ void Messeger::anthenticate(const QString &login, const QString &password)
 
     connect(reply, &QNetworkReply::finished,
                 [this, reply](){
-            if (reply->error() != QNetworkReply::NoError) {
-                this->authError = reply->errorString();
-            } else {
                 QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
-                QString token = obj.value("token").toString();
-                this->token = token;
-            }
-        this->Auth_Finished();
+                emit authRequestCompleted(reply->errorString(),
+                                          obj.value("token").toString());
                 reply->deleteLater();
 
     });
@@ -74,15 +51,7 @@ void Messeger::registrate(const QString &login, const QString &password)
   QNetworkReply *reply= _net.post(request, bodyData);
 
   connect(reply, &QNetworkReply::finished,[this,reply](){
-      if(reply->error() != QNetworkReply::NoError)
-      {
-          qDebug() << "Error:" << reply -> errorString();
-      }
-      else {
-          qDebug() << "Everything is ok";
-      }
-
-      this->Reg_Finished();
+      emit regRequestCompleted(reply -> errorString());
       reply->deleteLater();
 
   });

@@ -10,25 +10,18 @@ class Messeger : public QObject
 public:
     QString getToken();
     QString authError;
-    QString registerError;
     explicit Messeger(QObject *parent = nullptr);
     void anthenticate(const QString &login,
                       const QString &password);
     void registrate (const QString &login,
                      const QString &password);
-private slots:
-    void Reg_Finished();
-    void Auth_Finished();
 
 signals:
     void regRequestCompleted(QString);
-    void authRequestCompleted(QString);
+    void authRequestCompleted(QString,QString);
 
 private:
     QNetworkAccessManager _net;
-    QString token;
-signals:
-
 };
 
 #endif // MESSEGER_H
