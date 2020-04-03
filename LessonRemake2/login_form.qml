@@ -8,14 +8,14 @@ Item {
     anchors.top: parent.top
     anchors.horizontalCenter: parent.horizontalCenter
     Text {
-               id: title_text
-               text: qsTr("Sign in")
-               color: "purple"
-               font.pixelSize: 20
-               anchors.top:login_form.top
-               anchors.topMargin: 10
-               anchors.horizontalCenter: login_form.horizontalCenter
-           }
+        id: title_text
+        text: qsTr("Sign in")
+        color: "purple"
+        font.pixelSize: 20
+        anchors.top:login_form.top
+        anchors.topMargin: 10
+        anchors.horizontalCenter: login_form.horizontalCenter
+    }
     TextField{
         id:text_login
         placeholderText: qsTr("login")
