@@ -8,8 +8,6 @@ class Messeger : public QObject
 {
     Q_OBJECT
 public:
-    QString getToken();
-    QString authError;
     explicit Messeger(QObject *parent = nullptr);
     void anthenticate(const QString &login,
                       const QString &password);
