@@ -9,7 +9,6 @@
 
 Messeger::Messeger(QObject *parent) : QObject(parent)
 {
-
 }
 
 void Messeger::anthenticate(const QString &login, const QString &password)
